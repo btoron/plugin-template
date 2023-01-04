@@ -1,0 +1,10 @@
+build:
+	tsc
+	cp index.html dist/
+
+pack:
+	cp index.html dist/
+	webpack
+
+zip: pack
+	cd dist; zip plugin.zip index.html main.js

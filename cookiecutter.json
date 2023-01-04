@@ -1,0 +1,9 @@
+{
+    "plugin_name": "newPlugin",
+    "instance": "MY_INSTANCE",
+    "client_id": "CLIENT_ID",
+    "client_secret": "CLIENT_SECRET",
+    "_copy_without_render": [
+        "index.html"
+    ]
+}
