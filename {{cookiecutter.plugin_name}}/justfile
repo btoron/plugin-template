@@ -8,3 +8,6 @@ pack:
 
 zip: pack
 	cd dist; zip plugin.zip index.html main.js
+
+upload:
+	pluginmgr --filename plugin.zip upload {{cookiecutter.plugin_name}}
