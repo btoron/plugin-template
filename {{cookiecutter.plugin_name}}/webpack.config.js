@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 
-module.exports = {
+var config = {
     entry: "./assets/js/main.ts",
     module: {
         rules: [
@@ -49,4 +49,18 @@ module.exports = {
             }),
         ],
     },
+};
+
+module.exports = (env, argv) => {
+    if (argv.mode === "development") {
+        config.optimization.minimize = false;
+        config.devtool = "inline-source-map";
+    }
+
+    if (argv.mode === "production") {
+        config.optimization.minimize = true;
+        config.devtool = undefined;
+    }
+
+    return config;
 };

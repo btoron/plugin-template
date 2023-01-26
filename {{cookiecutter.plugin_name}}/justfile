@@ -1,12 +1,18 @@
 build:
 	tsc
-	cp index.html dist/
 
 pack:
 	cp index.html dist/
-	webpack
+	webpack --mode=production
+
+dev-pack:
+	cp index.html dist/
+	webpack --mode=development
 
 zip: pack
+	cd dist; zip plugin.zip index.html main.js
+
+dev-zip: dev-pack
 	cd dist; zip plugin.zip index.html main.js
 
 upload:
