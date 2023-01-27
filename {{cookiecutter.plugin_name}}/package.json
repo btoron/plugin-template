@@ -15,7 +15,6 @@
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/node-sass": "^4.11.3",
-    "@types/tabulator-tables": "^5.4.2",
     "css-loader": "^6.7.3",
     "node-sass": "^8.0.0",
     "sass": "^1.57.1",
