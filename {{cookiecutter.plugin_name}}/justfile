@@ -1,12 +1,15 @@
 build:
 	tsc
 
-pack:
-	cp index.html dist/
+dist-clean:
+	-@rm -rf dist/
+	-@mkdir dist
+	@cp index.html dist/
+
+pack: dist-clean
 	webpack --mode=production
 
-dev-pack:
-	cp index.html dist/
+dev-pack: dist-clean
 	webpack --mode=development
 
 zip: pack
