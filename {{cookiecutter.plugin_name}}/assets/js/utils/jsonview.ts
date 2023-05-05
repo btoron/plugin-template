@@ -162,7 +162,10 @@ class Node {
      */
     constructor(opt: any = {}) {
         let value = opt.hasOwnProperty("value") ? opt.value : null;
-        if (typeof value == "object" && Object.keys(value).length == 0) {
+        if (
+            typeof value == "object" &&
+            (value == null || Object.keys(value).length == 0)
+        ) {
             value = "{}";
         }
         this.key = opt.key || null;
